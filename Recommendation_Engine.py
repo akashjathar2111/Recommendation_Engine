@@ -3,19 +3,19 @@ import streamlit as st
 
 
 #CSV files of different kinfd of songs from Spotify 
-aarti = pd.read_csv('data/spotify Aarti.csv')
-navratri = pd.read_csv('data/spotify Navratri_songs.csv')
-devotional = pd.read_csv('data/spotify---devotional song.csv')
-assame = pd.read_csv('data/spotify_Assamese_music.csv')
-bengali = pd.read_csv('data/spotify_Bengali_music.csv')
-bhojpuri = pd.read_csv('data/spotify_Bhojpuri_music.csv')
-english = pd.read_csv('data/spotify_English_music.csv')
-malyalam = pd.read_csv('data/spotify_Malyalam_music.csv')
-marathi = pd.read_csv('data/spotify_Marathi_music.csv')
-hindi = pd.read_csv('data/spotify_musicdev.csv')
-hindi2 = pd.read_csv('data/spotify_musicdev2.csv')
-rajasthani = pd.read_csv('data/spotify_Rajasthani_music.csv')
-telugu = pd.read_csv('data/spotify_Telugu_music.csv')
+aarti = pd.read_csv('spotify Aarti.csv')
+navratri = pd.read_csv('spotify Navratri_songs.csv')
+devotional = pd.read_csv('spotify---devotional song.csv')
+assame = pd.read_csv('spotify_Assamese_music.csv')
+bengali = pd.read_csv('spotify_Bengali_music.csv')
+bhojpuri = pd.read_csv('spotify_Bhojpuri_music.csv')
+english = pd.read_csv('spotify_English_music.csv')
+malyalam = pd.read_csv('spotify_Malyalam_music.csv')
+marathi = pd.read_csv('spotify_Marathi_music.csv')
+hindi = pd.read_csv('spotify_musicdev.csv')
+hindi2 = pd.read_csv('spotify_musicdev2.csv')
+rajasthani = pd.read_csv('spotify_Rajasthani_music.csv')
+telugu = pd.read_csv('spotify_Telugu_music.csv')
 
 #code starting 
 def main():
