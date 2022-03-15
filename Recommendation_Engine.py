@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import webbrowser
 
 
 #CSV files of different kinfd of songs from Spotify 
@@ -53,7 +54,9 @@ def main():
         st.text('Selected Aarti Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_aarti)
+        
+        song = st.selectbox("Select the song",final_aarti.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
     elif choice == "Navratri":
         st.subheader("Navratri")
@@ -82,7 +85,9 @@ def main():
         st.text('Selected Navratri Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_navratri)
+        
+        song = st.selectbox("Select the song",final_navratri.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
 
     elif choice == "Devotional":
@@ -113,6 +118,8 @@ def main():
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
         st.write(final_devotional)
+        song = st.selectbox("Select the song",final_devotional.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
     elif choice == "Assame":
         st.subheader("Assame")
@@ -141,7 +148,9 @@ def main():
         st.text('Selected Assame Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_assame)
+        
+        song = st.selectbox("Select the song",final_assame.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
 
     elif choice == "Bengali":
@@ -171,7 +180,8 @@ def main():
         st.text('Selected Bengali Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_bengali)
+        song = st.selectbox("Select the song",final_bengali.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
     elif choice == "Bhojpuri":
         st.subheader("Bhojpuri")
@@ -200,7 +210,9 @@ def main():
         st.text('Selected Bhojpuri Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_bhojpuri)
+        song = st.selectbox("Select the song",final_bhojpuri.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
+        
 
 
     elif choice == "English":
@@ -230,7 +242,8 @@ def main():
         st.text('Selected English Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_english)
+        song = st.selectbox("Select the song",final_english.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
 
     elif choice == "Malyalam":
@@ -260,7 +273,8 @@ def main():
         st.text('Selected Malyalam Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_malyalam)
+        song = st.selectbox("Select the song",final_malyalam.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
 
     elif choice == "Marathi":
@@ -290,7 +304,8 @@ def main():
         st.text('Selected Marathi Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_marathi)
+        song = st.selectbox("Select the song",final_marathi.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
 
 #     elif choice == "Hindi":
@@ -380,7 +395,8 @@ def main():
         st.text('Selected Rajasthani Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_rajasthani)
+        song = st.selectbox("Select the song",final_rajasthani.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
 
     elif choice == "Telugu":
@@ -410,7 +426,8 @@ def main():
         st.text('Selected Telugu Song Is')
         st.write(selected_song_name)
         st.text('Top Popular songs are ')
-        st.write(final_telugu)
+        song = st.selectbox("Select the song",final_telugu.index)
+        webbrowser.open('https://open.spotify.com/search/'+str(song))
 
 
 if __name__ == '__main__':
