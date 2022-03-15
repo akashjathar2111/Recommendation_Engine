@@ -12,8 +12,8 @@ bhojpuri = pd.read_csv('spotify_Bhojpuri_music.csv')
 english = pd.read_csv('spotify_English_music.csv')
 malyalam = pd.read_csv('spotify_Malyalam_music.csv')
 marathi = pd.read_csv('spotify_Marathi_music.csv')
-hindi = pd.read_csv('spotify_musicdev.csv')
-hindi2 = pd.read_csv('spotify_musicdev2.csv')
+#hindi = pd.read_csv('spotify_musicdev.csv')
+#hindi2 = pd.read_csv('spotify_musicdev2.csv')
 rajasthani = pd.read_csv('spotify_Rajasthani_music.csv')
 telugu = pd.read_csv('spotify_Telugu_music.csv')
 
@@ -22,7 +22,7 @@ def main():
     st.title('Song Recommendation App')
     st.subheader("Hello User")
 
-    menu = ['Aarti','Navratri','Devotional','Assame','Bengali','Bhojpuri','English','Malyalam','Marathi','Hindi','Hindi2','Rajasthani','Telugu']
+    menu = ['Aarti','Navratri','Devotional','Assame','Bengali','Bhojpuri','English','Malyalam','Marathi','Rajasthani','Telugu']
     choice = st.sidebar.selectbox ("Menu", menu)
 
     if choice == "Aarti":
@@ -293,64 +293,64 @@ def main():
         st.write(final_marathi)
 
 
-    elif choice == "Hindi":
-        st.subheader("Hindi")
-        hindi['name'].values
+#     elif choice == "Hindi":
+#         st.subheader("Hindi")
+#         hindi['name'].values
 
-        # Hindi song
-        hin_pop = pd.DataFrame(hindi.groupby('name')['popularity'].mean())
-        hin_matrix = hindi.pivot_table(index='album', columns='name', values='popularity')
-        hin_matrix2 = hin_matrix.fillna(0)
-        hin_pop.sort_values('popularity', ascending=False).head(10)
-        #abc10 = hin_matrix2[""]
-        selected_song_name = st.selectbox('Song Name', hindi['name'].values)
-        abc10 = hin_matrix2[selected_song_name]
-        similar_to_abc10 = hin_matrix2.corrwith(abc10)
-        corr_abc10 = pd.DataFrame(similar_to_abc10, columns=['corr'])
-        corr_abc10.dropna(inplace=True)
-        corr_abc_hin = corr_abc10.join(hin_pop['popularity'])
-        #final_hin = corr_abc_hin[corr_abc_hin['popularity'] > 5].sort_values(by='corr', ascending=False)
-        selected_song_popularity = st.selectbox('Popularity', hindi['popularity'].values)
-        final_hin = corr_abc_hin[corr_abc_hin['popularity'] > selected_song_popularity].sort_values(by='corr',
-                                                                                                      ascending=False)
-        final_hindi_1 = final_hin.drop('corr', axis=1)
-        final_hindi = final_hindi_1.head()
-
-
-        st.text('Selected Hindi Song Is')
-        st.write(selected_song_name)
-        st.text('Top Popular songs are ')
-        st.write(final_hindi)
+#         # Hindi song
+#         hin_pop = pd.DataFrame(hindi.groupby('name')['popularity'].mean())
+#         hin_matrix = hindi.pivot_table(index='album', columns='name', values='popularity')
+#         hin_matrix2 = hin_matrix.fillna(0)
+#         hin_pop.sort_values('popularity', ascending=False).head(10)
+#         #abc10 = hin_matrix2[""]
+#         selected_song_name = st.selectbox('Song Name', hindi['name'].values)
+#         abc10 = hin_matrix2[selected_song_name]
+#         similar_to_abc10 = hin_matrix2.corrwith(abc10)
+#         corr_abc10 = pd.DataFrame(similar_to_abc10, columns=['corr'])
+#         corr_abc10.dropna(inplace=True)
+#         corr_abc_hin = corr_abc10.join(hin_pop['popularity'])
+#         #final_hin = corr_abc_hin[corr_abc_hin['popularity'] > 5].sort_values(by='corr', ascending=False)
+#         selected_song_popularity = st.selectbox('Popularity', hindi['popularity'].values)
+#         final_hin = corr_abc_hin[corr_abc_hin['popularity'] > selected_song_popularity].sort_values(by='corr',
+#                                                                                                       ascending=False)
+#         final_hindi_1 = final_hin.drop('corr', axis=1)
+#         final_hindi = final_hindi_1.head()
 
 
-    elif choice == "Hindi2":
-        st.subheader("Hindi2")
-        hindi2['name'].values
+#         st.text('Selected Hindi Song Is')
+#         st.write(selected_song_name)
+#         st.text('Top Popular songs are ')
+#         st.write(final_hindi)
 
-        # Hindi2 song
-        hin2_pop = pd.DataFrame(hindi2.groupby('name')['popularity'].mean())
-        hin2_matrix = hindi2.pivot_table(index='album', columns='name', values='popularity')
-        hin2_matrix2 = hin2_matrix.fillna(0)
-        hin2_pop.sort_values('popularity', ascending=False).head(10)
-        #abc11 = hin2_matrix2[""]
-        selected_song_name = st.selectbox('Song Name', hindi2['name'].values)
-        abc11 = hin2_matrix2[selected_song_name]
-        similar_to_abc11 = hin2_matrix2.corrwith(abc11)
-        corr_abc11 = pd.DataFrame(similar_to_abc11, columns=['corr'])
-        corr_abc11.dropna(inplace=True)
-        corr_abc_hin2 = corr_abc11.join(hin2_pop['popularity'])
-        #final_hin2 = corr_abc_hin2[corr_abc_hin2['popularity'] > 5].sort_values(by='corr', ascending=False)
-        selected_song_popularity = st.selectbox('Popularity', hindi2['popularity'].values)
-        final_hin2 = corr_abc_hin2[corr_abc_hin2['popularity'] > selected_song_popularity].sort_values(by='corr',
-                                                                                                         ascending=False)
 
-        final_hindi2_1 = final_hin2.drop('corr', axis=1)
-        final_hindi2 = final_hindi2_1.head()
+#     elif choice == "Hindi2":
+#         st.subheader("Hindi2")
+#         hindi2['name'].values
 
-        st.text('Selected Hindi_2 Song Is')
-        st.write(selected_song_name)
-        st.text('Top Popular songs are ')
-        st.write(final_hindi2)
+#         # Hindi2 song
+#         hin2_pop = pd.DataFrame(hindi2.groupby('name')['popularity'].mean())
+#         hin2_matrix = hindi2.pivot_table(index='album', columns='name', values='popularity')
+#         hin2_matrix2 = hin2_matrix.fillna(0)
+#         hin2_pop.sort_values('popularity', ascending=False).head(10)
+#         #abc11 = hin2_matrix2[""]
+#         selected_song_name = st.selectbox('Song Name', hindi2['name'].values)
+#         abc11 = hin2_matrix2[selected_song_name]
+#         similar_to_abc11 = hin2_matrix2.corrwith(abc11)
+#         corr_abc11 = pd.DataFrame(similar_to_abc11, columns=['corr'])
+#         corr_abc11.dropna(inplace=True)
+#         corr_abc_hin2 = corr_abc11.join(hin2_pop['popularity'])
+#         #final_hin2 = corr_abc_hin2[corr_abc_hin2['popularity'] > 5].sort_values(by='corr', ascending=False)
+#         selected_song_popularity = st.selectbox('Popularity', hindi2['popularity'].values)
+#         final_hin2 = corr_abc_hin2[corr_abc_hin2['popularity'] > selected_song_popularity].sort_values(by='corr',
+#                                                                                                          ascending=False)
+
+#         final_hindi2_1 = final_hin2.drop('corr', axis=1)
+#         final_hindi2 = final_hindi2_1.head()
+
+#         st.text('Selected Hindi_2 Song Is')
+#         st.write(selected_song_name)
+#         st.text('Top Popular songs are ')
+#         st.write(final_hindi2)
 
 
     elif choice == "Rajasthani":
